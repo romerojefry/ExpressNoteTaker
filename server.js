@@ -12,3 +12,7 @@ const PORT = process.env.PORT || 3000;
 require("./routes/htmlRoute")(app);
 require("./routes/apiRoute")(app);
 
+//server 
+app.listen(PORT, function() {
+    console.log("app is listening" = PORT);
+})
