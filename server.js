@@ -6,6 +6,12 @@ const path = require ("path");
 //browser and heroku 
 const PORT = process.env.PORT || 3000;
 
+//adding data araay
+notesData= [];
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.joint(__dirname, "public")));
 
 //routes
 
