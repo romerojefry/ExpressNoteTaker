@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const notesData =fs.readFileSync("db.json", "utf8");
+var notesData =fs.readFileSync("db.json", "utf8");
 
 module.exports = function(app){
 
@@ -15,15 +15,15 @@ res.json(notesData);
 });
 
 //adding notes
-app.post("/api/notes", function(req,res) {
-    var newNote = req.body;
+app.post("/api/notes", function(req,res){
+    notesData = req.body;
     fs.readFile("db.json", "utf8", function(notesData)
- });
+  });
 
  //delete
- app.delete("/api/notes/:id", function(req, res)
-    fs,writeFile("db.json", JSON.stringify(notesData),function(error){
-        if(err), throw(err);
-        console.log("deleted")
-    })
+ app.delete("/api/notes/:id", function(req, res){
+    fs.writeFile("db.json", JSON.stringify(notesData),function(error){
+        if(err)throw(err);
+    });
+    console.log("deleted")
 }
