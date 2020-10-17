@@ -17,12 +17,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //routes
 
-require("./routes/htmlRoute")(app);
-require("./routes/apiRoute")(app);
+//require("./routes/htmlRoute")(app);
+//require("./routes/apiRoute")(app);
 
 //
 app.get("/api/notes", function(req, res){
-    notesData =fs.readFileSync("Develop/db/db.json", "utf8");
+    notesData =fs.readFileSync("db.json", "utf8");
     //to make it where notes is an array of objects
     notesData = JSON.parse(notesData);
     
@@ -33,5 +33,5 @@ res.json(notesData);
 
 //server start listener
 app.listen(PORT, function() {
-    console.log("app is listening" = PORT);
+    console.log("app is listening" + PORT);
 });
