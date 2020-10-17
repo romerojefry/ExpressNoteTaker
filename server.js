@@ -17,18 +17,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //routes
 
-//require("./routes/htmlRoute")(app);
-//require("./routes/apiRoute")(app);
+require("./routes/htmlRoute")(app);
+require("./routes/apiRoute")(app);
 
-//
-app.get("/api/notes", function(req, res){
-    notesData =fs.readFileSync("db.json", "utf8");
-    //to make it where notes is an array of objects
-    notesData = JSON.parse(notesData);
-    
-//sent through browser    
-res.json(notesData);
-});
+
 
 
 //server start listener
